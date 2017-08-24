@@ -66,3 +66,44 @@ The hourglass with the maximum sum () is:
   2
 1 2 4
 */
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        int[][] array = new int[6][6];
+        int sum=0, result=0, sub=0;
+        Scanner sc = new Scanner(System.in);
+        //System.out.println("Enter array elements")
+        for(int x=0 ; x < 6; x++){
+           for( int y=0; y < 6; y++) {
+                    array[x][y]= sc.nextInt();
+           }
+        }
+        //System.out.println("Desired Sum : ")
+        for( int k=0; k < 4; k++){
+            for( int m=0; m < 4; m++){
+                for ( int i=k; i < k+3; i++ ){
+                    int j=0; 
+                    for ( j=m; j < m+3; j++){
+                        if( i != k+1){
+                            sum += array[i][j];
+                        }
+                        else{
+                            sum += array[i][j+1];
+                            break;
+                        }
+                    }
+                }
+                result = Math.max(result, sum);
+                sum = 0;      
+            }
+        }
+        System.out.println(result);
+                
+    }
+}
