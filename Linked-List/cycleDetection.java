@@ -46,10 +46,10 @@ boolean hasCycle(Node head) {
 
 
 /* Recommended Solution with O(1)
-public boolean hasCycle(ListNode head) {
+boolean hasCycle(Node head) {
     if(head==null) return false;
-    ListNode walker = head;
-    ListNode runner = head;
+    Node walker = head;
+    Node runner = head;
     while(runner.next!=null && runner.next.next!=null) {
         walker = walker.next;
         runner = runner.next.next;
