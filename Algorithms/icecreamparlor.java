@@ -40,3 +40,48 @@ Sunny and Johnny make the following two trips to the parlor:
 The first time, they pool together  dollars. There are five flavors available that day and flavors  and have a total cost of . Thus, we print 1 4 on a new line.
 The second time, they pool together  dollars. There are four flavors available that day and flavors  and have a total cost of . Thus, we print 1 2 on a new line.
 */
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+       // System.out.println("Enter number of trips :");
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        for(int k=0; k<t; k++){ 
+       // System.out.println("Enter m :");
+        int m = sc.nextInt();
+       // System.out.println("Enter n :");
+        int n = sc.nextInt();
+        int[] flavours = new int[n];
+        for(int i = 0; i < n; i++){
+            flavours[i] = sc.nextInt();
+         }
+         Solution ob = new Solution();
+         int[] result = new int[2];
+         result = ob.icecream(flavours,n,m);
+         int i=0;
+         System.out.println(result[i]+" "+result[i+1]);    
+        }   
+        }  
+    
+    public int[] icecream(int[] flavours, int n, int m){
+         int result[] = new int[2];       
+        for(int i=1; i<n; i++ ){
+            for(int j = i+1; j<n; j++){
+                if( m - flavours[i] == flavours[j]){
+                    result[0] = ++i;
+                    result[1] = ++j;
+                    return result;     
+                }
+           }     
+        }
+        return result;
+    }       
+}
