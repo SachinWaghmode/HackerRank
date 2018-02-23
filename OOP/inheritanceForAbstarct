@@ -8,7 +8,7 @@ Creates Dog, Cow, and Duck objects.
 Calls the getIsMammal(), getIsCarnivorous(), and getGreeting() methods on each of these respective objects.
  
 
-Consider the following UML diagram:
+Consider the following UML diagram: Refer UML diagram in README.md file
 */
 <img width="558" alt="screen shot 2018-02-22 at 10 07 25 pm" src="https://user-images.githubusercontent.com/25470880/36580392-dfc02efe-181c-11e8-8e4f-311e691e2c18.png">
 /*
