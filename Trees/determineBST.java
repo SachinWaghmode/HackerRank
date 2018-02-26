@@ -89,3 +89,48 @@ The fourth query, 1 3 4 2, is not a pre-order traversal of a binary search tree.
 The fifth query, 3 4 5 1 2, is not a pre-order traversal of a binary search tree. We know that the root is 3 because that is the first value in the list. For the second value to be 4, it must be the right child of 3. For the third value to be 5, it must be the right child of 4. For the fourth value to be 1, it must be the left child of 5; however, this would break the order property of a binary search tree because a value less than 4 would be in 4's right subtree. Thus, we print NO on a new line.
  
 */
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        
+        for(int i=0; i<q; i++){
+            int n = in.nextInt();
+            int[] nodes = new int[n];
+            for(int j=0; j<n; j++){
+                nodes[j] = in.nextInt();
+            }
+            String result = determineBST(n,nodes);
+            System.out.println(result);
+        }
+        
+    }
+    public static String determineBST(int n, int[] nodes){
+        
+        Stack<Integer> st = new Stack<>();
+        
+        int root = Integer.MIN_VALUE;
+        
+        for(int i=0; i<nodes.length; i++){
+            
+            if(nodes[i]< root){
+                return "NO";
+            }
+            
+            while(!st.isEmpty() && st.peek() < nodes[i]){
+                root = st.peek();
+                st.pop();
+            }
+            
+            st.push(nodes[i]);
+        }
+        return "YES";
+    }
+}
