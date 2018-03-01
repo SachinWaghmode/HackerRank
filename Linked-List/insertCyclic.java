@@ -7,3 +7,6 @@ Example:
       \   /
         22
 */
+public static void insertNode(Node node, int value){
+        
+}
