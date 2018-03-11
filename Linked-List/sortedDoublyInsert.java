@@ -35,52 +35,54 @@ We start out with an empty list. We insert a node with . The list becomes . We r
 The head of the previously modified list is passed to our method as an argument. We insert a node with . The list becomes . We return .
 The head of the previously modified list is passed to our method as an argument. We insert a node with . The list becomes . We return .
 Hidden stub code then prints the final list as a single line of space-separated integers.
+*/
 
-Easy
-Submitted 30896 times
-Max Score 5
-Need Help?
 
-View Discussions
-View Editorial Solution
-View Top Submissions
-Rate This Challenge:
-
-Download problem statement
-Download sample test cases
-Suggest Edits
- 
-
- 
-1
 /*
-2
   Insert Node at the end of a linked list 
-3
   head pointer input could be NULL as well for empty list
-4
   Node is defined as 
-5
   class Node {
-6
      int data;
-7
      Node next;
-8
      Node prev;
-9
   }
-10
 */
-11
-​
-12
-Node SortedInsert(Node head,int data) {
-13
-  
-14
-}
-15
-​
 
-*/
+Node SortedInsert(Node head,int data) {
+     Node insert = new Node();
+     insert.data = data;
+     insert.prev = null;
+     insert.next = null;
+     if(head == null){
+         head = insert;
+         return head;
+     } 
+     Node node = head, prevN = null;
+    
+         while(node!=null){
+             if(node.data > data && node.prev == null){
+                 node.prev = insert;
+                 insert.next = node;
+                 head = insert;
+                 return head;
+             }
+             else if(node.data > data){
+                 insert.prev = prevN;
+                 prevN.next = insert;
+                 node.prev = insert;
+                 insert.next = node;   
+                 return head;
+             }
+             else if(node.next == null){
+                 insert.prev = node;
+                 node.next = insert;
+                 return head;
+             }
+             prevN = node;
+             node = node.next;
+         }
+     
+    return head;
+}
+
