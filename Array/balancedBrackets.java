@@ -41,3 +41,45 @@ The string {[()]} meets both criteria for being a balanced string, so we print Y
 The string {[(])} is not balanced, because the brackets enclosed by the matched pairs [(] and (]) are not balanced.
 The string {{[[(())]]}} meets both criteria for being a balanced string, so we print YES on a new line.
 */
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static String isBalanced(String s) {
+        // Complete this function
+        Stack<Character> st = new Stack<>();
+        for(int i=0; i<s.length(); i++){
+            if(s.charAt(i)=='('){
+                st.push(')');
+            }else if(s.charAt(i)=='{'){
+                st.push('}');
+            }else if(s.charAt(i)=='['){
+                st.push(']');
+            }
+            else if(!st.isEmpty()){
+                char c = st.pop();
+                if(c!=s.charAt(i)) return "NO";
+            }
+        }
+        if(st.isEmpty())
+            return "YES";
+        else
+            return "NO";
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            String s = in.next();
+            String result = isBalanced(s);
+            System.out.println(result);
+        }
+        in.close();
+    }
+}
