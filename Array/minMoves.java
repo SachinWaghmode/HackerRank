@@ -29,8 +29,6 @@ public class Solution{
           else{
             swap+=count;
           }
-        }
-        for(int i=0; i<avg.length;i++){
           if(avg[i]==1){
             count1++;
           }
@@ -38,6 +36,7 @@ public class Solution{
             swap1+=count1;
           }
         }
+        
         return Math.min(swap,swap1);
     }
 }
