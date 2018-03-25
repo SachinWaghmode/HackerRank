@@ -3,7 +3,7 @@ Code Pair problem:
 Given a text containing words, spaces, new lines and punctuations, 
 Print the frequency of each word ignoring capitalization in order of frequency.
 
-Sample input: "The quick brown fox, jumped over the brown log. The slow red fox did not.
+Sample input: "The quick brown fox, jumped over the brown log. The slow red fox did not."
 
 output:
 the: 3
