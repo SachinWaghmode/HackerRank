@@ -69,7 +69,7 @@ public class FrequencySort {
 		Set<Entry<String, Integer>> entrySetSortedByValue = sortedByValue.entrySet(); 
 		
 		for(Entry<String, Integer> mapping : entrySetSortedByValue){ 
-			System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
+			System.out.println(mapping.getKey() + " : " + mapping.getValue());
 		}	
 	}
 }
