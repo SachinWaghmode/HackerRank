@@ -1,0 +1,22 @@
+/* General Tree (Each node can have arbitrary number of children) Level Order Traversal
+Given a generic tree, perform a Level order traversal and print all of its nodes
+
+Input :            10
+             /   /    \   \
+            2  34    56   100
+           / \        |   / | \
+          77  88      1   7  8  9
+
+Output : 10
+         2 34 56 100
+         77 88 1 7 8 9
+
+Input :             1
+             /   /    \   \
+            2  3      4    5
+           / \        |  /  | \
+          6   7       8 9  10  11
+Output : 1
+         2 3 4 5
+         6 7 8 9 10 11
+ */
